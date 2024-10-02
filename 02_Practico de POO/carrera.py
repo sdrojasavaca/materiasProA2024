@@ -9,6 +9,7 @@ def crearPersonaje():
                 break
             else:
                 print("el valor del ataque debe ser entre 1 y 100")
+                print(f"Vuelva a ingresar el ataque de {nombre} 1/100")
         except ValueError:
             print("Entrada inválida. Ingresa un número entero.")
     while True:
@@ -18,16 +19,16 @@ def crearPersonaje():
                 break
             else:
                 print("el valor de la defensa debe ser entre 1 y 100")
+                print(f"Vuelva a ingresar la defensa de {nombre} 1/100")
+
         except ValueError:
             print("Entrada inválida. Ingresa un número entero.")
     return Personaje(nombre, ataque, defensa)
 
 def mostrarInformacion(personajes):
-    for i in range(len(personajes)):
-        if personajes.estado:
-            print(f"Personaje {i+1}: {personajes.nombre}, Ataque: {personajes.ataque}, Defensa: {personajes.defensa},Estado: Vivo, Vida: {personajes.vida}")
-        else:
-            print(f"Personaje {i+1}: {personajes.nombre}, Ataque: {personajes.ataque}, Defensa: {personajes.defensa},Estado: Muerto, Vida: {personajes.vida}")
+    for i, personaje in enumerate(personajes):
+        estado = "Vivo" if personaje.estado else "Muerto"
+        print(f"Personaje {i+1}: {personaje.nombre}, Ataque: {personaje.ataque}, Defensa: {personaje.defensa}, Estado: {estado}, Vida: {personaje.vida}")
 
 def simular_ataque(personajes):
     if len(personajes) < 2:
@@ -35,9 +36,10 @@ def simular_ataque(personajes):
         return
     else:
         mostrarInformacion(personajes)
-        
+        print("\n")
         atacanteIndice = int(input("Elige el número del personaje que atacará: ")) - 1
         defensorIndice= int(input("Elige el número del personaje que recibirá el ataque: ")) - 1
+        print("\n")
 
         if atacanteIndice == defensorIndice:
             print("No se puede atacar a si mismo el pesronaje")
