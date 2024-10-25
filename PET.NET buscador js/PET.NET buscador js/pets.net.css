@@ -1,0 +1,82 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+
+#search-input {
+    width: 100%;
+    padding: 10px 100px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #ffcc00;
+    border-radius: 0 0 20px 20px;
+}
+
+header .logo img {
+    height: 60px;
+}
+
+header .search-bar input {
+    padding: 5px;
+    width: 300px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+
+/**/
+.main-container {
+    background-color: #f8f9fa; /* Fondo diferenciado para el main */
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Añadir sombra para destacar el contenedor */
+
+
+    min-width: 90%;
+    max-width:100%;
+    margin-top: 50px;
+    margin-left: 50px;
+    margin-right: 50px;
+    
+}
+  .card-container {
+    display: flex;
+    overflow-x: auto;
+    gap: 1rem; /* Espacio entre las tarjetas */
+    padding: 1rem 0;
+  }
+  .card {
+    min-width: 250px; /* Anchura mínima de las tarjetas */
+    flex: 0 0 auto; /* Evita que las tarjetas se reduzcan demasiado */
+  }
+
+
+/**/
+
+main {
+    
+}
