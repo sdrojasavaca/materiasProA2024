@@ -1,14 +1,17 @@
 import sqlite3
 
 class Profesor:
-    def __init__(self, id_profesor, nombre):
+    def __init__(self, id_profesor, nombre, apellido, id_materia):
         self.id_profesor = id_profesor
         self.nombre = nombre
+        self.apellido = apellido
+        self.id_materia = id_materia
 
     def agregar_profesor(self):
         conn = sqlite3.connect('escolar.db')
         c = conn.cursor()
-        c.execute('INSERT INTO profesores (id_profesor, nombre) VALUES (?, ?)', (self.id_profesor, self.nombre))
+        c.execute('INSERT INTO profesores (id_profesor, nombre, apellido, id_materia) VALUES (?, ?, ?, ?)', 
+                  (self.id_profesor, self.nombre, self.apellido, self.id_materia))
         conn.commit()
         conn.close()
 
@@ -21,10 +24,11 @@ class Profesor:
         conn.close()
         return profesores
 
-    def actualizar_profesor(self, nuevo_nombre):
+    def actualizar_profesor(self, nuevo_nombre, nuevo_apellido, nuevo_id_materia):
         conn = sqlite3.connect('escolar.db')
         c = conn.cursor()
-        c.execute('UPDATE profesores SET nombre = ? WHERE id_profesor = ?', (nuevo_nombre, self.id_profesor))
+        c.execute('UPDATE profesores SET nombre = ?, apellido = ?, id_materia = ? WHERE id_profesor = ?', 
+                  (nuevo_nombre, nuevo_apellido, nuevo_id_materia, self.id_profesor))
         conn.commit()
         conn.close()
 
