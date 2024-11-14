@@ -3,6 +3,8 @@ from ClsProfesor import Profesor
 from ClsMateria import Materia
 from ClsClasificacion import Calificacion
 
+idEstuidante, idProfesor, idMateria= 0
+
 def menuEstudiantes():
     while True:
         print('''
@@ -18,17 +20,39 @@ def menuEstudiantes():
         opcionEstudiantes = input("Elige una opción en estudiantes: ")
         
         if opcionEstudiantes =="1":
-            Estudiante.agregar_estudiante
+            idEstudiante= idEstudiante + 1
+            nombre=input("Ingrese el nombre del estudiante que añadira")
+            apellido= input("Ingrese el apellido del estudiante que añadira")
+            while True: #input curso
+                try: 
+                    curso= int(input('''
+                    Ingrese el numero del curso que pertenece el estudiante que añadira
+                    ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+                    ▐ 1 Primer Año      ▌
+                    ▐ 2 Segundo Año     ▌
+                    ▐ 3 Tercer Año      ▌
+                    ▐ 4 Cuarto Año      ▌
+                    ▐ 5 Quinto Año      ▌  
+                    ▐ 6 Sexto Año       ▌ 
+                    ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀'''))
+                except ValueError:
+                    print  ("Valor incorrecto, ingresa de nuevo")
+                    continue
+                else:
+                    break
+            estudiante =Estudiante(idEstudiante, nombre, apellido, curso)
+            estudiante.agregar_estudiante()
+            print("El estudiante fue ingresado con exito")
         elif opcionEstudiantes == "2":
-            Estudiante.ver_estudiantes
-        elif opcionEstudiantes == "3":
+            print(Estudiante.ver_estudiantes)
+        elif opcionEstudiantes == "3":             
              Estudiante.actualizar_estudiante
         elif opcionEstudiantes == "4":
             Estudiante.eliminar_estudiante
         elif opcionEstudiantes == "5":
             break
         else:
-            print("Opción no erronea, intenta de nuevo")
+            print ("Opción no erronea, intenta de nuevo")
 def menuProfesores():
     while True:
         print('''
