@@ -1,0 +1,452 @@
+/* Estilos generales */     /* Estilos generales */     /* Estilos generales */
+
+html{
+    height: 100%;
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #2e2f2f;
+    min-height: 100%;
+    min-width: 100%;
+}
+.grid-container{
+    display: grid;
+    gap: 20px;
+    justify-items: stretch;
+    grid-template-columns: 250px auto;
+    grid-template-areas: 
+    "sidebar main main" 
+    ;
+}
+
+
+.main {
+    width: 100%;
+    grid-area: "main";
+
+}
+/*Estilo del menu*/     /*Estilo del menu*/     /*Estilo del menu*/
+                    
+        #sidebar {
+            grid-area: "sidebar";
+            background-color: #1e1e1f;
+            height: 100vh ;
+            left: 0;
+            top: 0;
+            display: flex;
+            flex-direction: column;
+            position: sticky;
+            overflow-y: auto;
+            scrollbar-width: none; /* Firefox */
+        }
+        
+        .sidebar::-webkit-scrollbar {
+            display: none; /* Chrome, Safari y Edge */
+        }
+
+
+        #sidebar .logo {
+            padding: 15px 10px 0px 5px;
+            text-align: left;
+        }
+
+        .logo-small {
+            display: none;
+
+        }
+
+        #sidebar.collapsed {
+            width: 70px;
+        }
+
+
+        #sidebar ul {
+            margin-top: 0px;
+            padding: 0px 0px 0px 0px;
+            text-align: left;
+            list-style: none;
+
+        }
+        #sidebar ul li img {
+            width: 25px; 
+            height: 25px;
+            filter: brightness(0) saturate(100%) invert(95%) sepia(0%) saturate(1000%) hue-rotate(0deg) brightness(90%);
+        }
+        #sidebar ul li img.icon-active {
+            width: 25px; 
+            height: 25px;
+            filter: none;
+        }
+
+
+        #sidebar ul li span {
+            position:relative;
+            top: -6px;
+            margin-left: 20px;
+            font-size:larger;
+        }
+
+        #sidebar ul li {
+            padding: 15px 20px 0px 22px;
+
+        }
+
+        #sidebar ul li a {
+            color: #e1e0df;
+            text-decoration: none;
+            display: block;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease, border-radius 0.3s ease;
+        }
+
+        #sidebar ul li a:hover {
+            background-color:#585956;
+            border-radius: 100px;
+            box-shadow: 1px -2px 1px 10px #585956;
+        }
+        @media (max-width: 1080px) {
+
+            .grid-container{
+                display: grid;
+                gap: 20px;
+                grid-template-columns: 100px auto;
+                grid-template-areas: 
+                "sidebar main" 
+                ;
+            }
+            #sidebar{
+                width: 70px;
+            }
+            .logo-large {
+                display: none;
+            }
+
+            .logo-small {
+                padding: 15px 10px 0px 5px;
+                display: block;
+            }
+            #sidebar ul li span {
+                display: none;
+
+            }
+            #sidebar ul li a:hover {
+                background-color: #585956;
+                border-radius: 100px;
+                box-shadow: -1px -1.5px 0px 10px  #585956;
+            }
+            .calendar-container {
+                width: 90%;
+            }
+        
+        }
+
+
+
+/* Estilos de las secciones */      /* Estilos de las secciones */      /* Estilos de las secciones */
+
+    .section {
+        background-color: #1e1e1f;
+        padding: 20px;
+        margin: 0 20px 20px auto; /* Centrar la sección horizontalmente */
+        border-radius: 10px;
+        box-shadow: 0 2px 5px #01fe4c;
+        max-width: 70vw; /* Evitar que exceda el ancho de la ventana */
+        overflow: hidden; /* Esconde cualquier contenido fuera del área visible */
+    }
+
+    h1 {
+        font-size: 2.5em;
+        color: #e1e0df;
+    }
+
+    h2 {
+        font-size: 2em;
+        margin-bottom: 15px;
+        color: #e1e0df;
+    }
+
+    p {
+        font-size: 1.2em;
+        line-height: 1;
+        color: #e1e0df;
+
+    }
+
+    ul {
+        list-style-type: disc;
+        list-style: none;
+        color: #e1e0df;
+        padding-left: 40px;
+        margin-bottom: 20px;
+    }
+
+    li {
+        margin-bottom: 10px;
+        color: #e1e0df;
+
+    }
+
+    a {
+        color: #4CAF50;
+        text-decoration: none;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+
+
+
+/* Estilos para el carrusel *//* Estilos para el carrusel */
+    .carrusel {
+        position: relative;
+        width: 100%; /* Ajustar al contenedor */
+        max-width: 600px;
+        overflow: hidden;
+        border-radius: 15px; /* Bordes redondeados del carrusel */
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        margin: 20px auto; /* Centrar el carrusel */
+    }
+
+    .carrusel-imagenes {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+    }
+
+    .carrusel-imagenes img {
+        width: 100%;
+        border-radius: 15px; /* Bordes redondeados de las imágenes */
+        display: none; /* Ocultar imágenes por defecto */
+    }
+
+    .carrusel-imagenes img.activo {
+        display: block; /* Mostrar solo la imagen activa */
+    }
+
+    .navegacion {
+        position: absolute;
+        top: 50%;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        transform: translateY(-50%);
+    }
+    .puntos-navegacion {
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    .punto {
+        display: inline-block;
+        width: 15px;
+        height: 15px;
+        margin: 0 5px;
+        border-radius: 50%;
+        background-color: #bbb;
+        cursor: pointer;
+    }
+
+    .punto.activo {
+        background-color: #717171; /* Color del punto activo */
+    }
+
+
+/* Tarjetas styles */       /* Tarjetas styles */       /* Tarjetas styles */
+
+        .card-container {
+            display: flex;
+            flex-wrap: nowrap; /* Evita que las tarjetas salten de fila */
+            overflow-x: auto; /* Habilita el scroll horizontal */
+            gap: 16px;
+            padding: 16px;
+        }
+
+        .card-container::-webkit-scrollbar {
+            height: 8px;
+        }
+
+        .card-container::-webkit-scrollbar-thumb {
+            background-color: #888;
+            border-radius: 4px;
+        }
+
+        .card-container::-webkit-scrollbar-thumb:hover {
+            background-color: #555;
+        }
+
+        .card {
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            overflow: hidden;
+            min-width: 220px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            flex-shrink: 1; /* Evita que las tarjetas se reduzcan en tamaño */
+            line-height: 0.5;
+
+        }
+
+        .card img {
+            width: 100%;
+            height: 30%;
+            object-fit: cover;
+        }
+        
+
+        .card-body {
+            padding: 10px;
+        }
+
+        .card-title {
+            font-size: 1.4em;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #e1e0df;
+        }
+
+        .card a:hover{
+            text-decoration: none;
+        }
+        .card-detail {
+
+            font-size: 0.9em;
+            margin-bottom: 4px;
+            line-height: 0.5;
+            color: #e1e0df;
+
+        }
+
+        .card-features {
+            font-size: 0.9em;
+            color: #e1e0df;
+
+            margin-top: 8px;
+        }
+
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 10px 8px 12px rgba(0, 0, 0, 0.2);
+            border-color: #4CAF50;
+          }
+          
+          .card-title:hover {
+            color: #fcb753;
+          }
+
+          .card1:hover {
+            transform: translateY(-5px);
+            box-shadow: 10px 8px 12px rgba(0, 0, 0, 0.2);
+            border-color: #4CAF50;
+          }
+          
+          .card-title1:hover {
+            color: #fcb753;
+          }
+
+        .card1 {
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            overflow: hidden;
+            min-width: 350px;
+            min-height: 130px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            flex-shrink: 1; /* Evita que las tarjetas se reduzcan en tamaño */
+            line-height: 0.5;
+
+        }
+
+        .card1 img {
+            width: 100%;
+            height: 80%;
+            object-fit: cover;
+        }
+
+        .card-body1 {
+            padding: 10px;
+        }
+
+        .card-title1 {
+            text-align: center;
+            font-size: 1.4em;
+            margin-bottom: 100px;
+            font-weight: bold;
+        }
+
+/* Calendar styles */       /* Calendar styles */       /* Calendar styles */
+
+        .calendar-container {
+            width: 100%;
+            
+            max-width: 600px;
+            background-color: #f4f4f4;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .calendar-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .calendar-header button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .calendar-header button:hover {
+            background-color: #45a049;
+        }
+
+        #currentMonthYear {
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: center;
+        }
+
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        td {
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        td:hover {
+            background-color: #e0e0e0;
+        }
+
+
+
+
+
+
+
+
+
+        .tarjeta {
+            width: 400px;
+            aspect-ratio: 1 / 0,7;
+            border-radius: 8px;
+            position: relative;
+        }

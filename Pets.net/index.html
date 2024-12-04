@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pets.net</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/x-icon" href="img/logo/LogoTextCurvPetsnet.svg">
+</head>
+<body class="grid-container" class="p-3 m-0 border-0 bd-example m-0 border-0">
+    <nav id="sidebar">
+        <div class="logo">
+                <a href="index.html" class="logo-large">
+                    <img src="img/logo/LogoTextPetsnet.svg" alt="Logo Pets.net" width="150" height="58">
+                </a>
+                <a href="index.html" class="logo-small">
+                    <img src="img/logo/Pets.netLogoResponsive.svg" alt="Logo pequeño Pets.net" width="50" height="50">
+                </a>
+        </div>
+        
+        <ul>
+        <li><a href="index.html"><img src="img/Iconos menu/darkhogar.svg" alt="Icono Inicio" class="icon-active" ><span>Inicio</span></a></li>
+        <li><a href="noticias.html"><img src="img/Iconos menu/periodico.svg" alt="Icono Noticias" ><span>Noticias</span></a></li>
+        <li><a href="mascotas.html"><img src="img/Iconos menu/pata.svg" alt="Icono Mascotas"><span>Mascotas</span></a></li>
+        <li><a href="instituciones.html"><img src="img/Iconos menu/techo-de-personas.svg" alt="Icono Instituciones"><span>Instituciones</span></a></li>
+        <li><a href="calendario.html"><img src="img/Iconos menu/dia-del-calendario.svg" alt="Icono Calendario"><span>Calendario</span></a></li>        
+        <li><a href="nosotros.html"><img src="img/Iconos menu/informacion.svg" alt="Icono Nosotros" ><span>Nosotros</span></a></li>
+        <li><a href="sugerencias.html"><img src="img/Iconos menu/interrogatorio.svg" alt="Icono Sugerencias" ><span>Sugerencias</span></a></li>
+        </ul>
+    </nav>
+
+
+    <main class="main">
+        <h1>Inicio</h1>
+        <section class="section carrusel-section">
+            <h2>Noticias</h2>
+            <div class="carrusel" aria-label="Carrusel de imágenes">
+                <div class="carrusel-imagenes">
+                    <img src="img/imagen1.jpg" alt="Descripción de la imagen 1" class="activo">
+                    <img src="img/imagen2.jpg" alt="Descripción de la imagen 2">
+                    <img src="img/imagen3.jpg" alt="Descripción de la imagen 3">
+                </div>
+                <div class="puntos-navegacion">
+                    <span class="punto activo" aria-current="true"></span>
+                    <span class="punto"></span>
+                    <span class="punto"></span>
+                </div>
+            </div>
+        </section>
+        <section class="section">
+            <h2>Ayudanos contestando unas preguntas</h2>
+            <p>El objetivo de este cuestionario es encontrar una estadistica para conocer, de manera que, ambos, sean felices tras la adopción.
+            </p>
+            <p>Para realizar el cuestionario <a href="https://docs.google.com/forms/d/e/1FAIpQLSdPa22CsSN-C1jaUUhHtdGZtxMAoigNmL_Fi0Bk3of8HL9E7g/viewform?usp=sf_link">haz click aquí</a></p>
+        </section>
+        <section class="section">
+            <h2>Localidades</h2>
+            <div id="localidadesContainer" class="card-container"></div>
+        </section>
+
+        <section class="section">
+            <h2>Quienes somos</h2>
+            <p>Somos un equipo apasionado por los animales. Este proyecto nació a mediados de mayo de 2024 con la misión de hacer una página web para todos aquellos animales que están en situación de calle. Desde el principio, nuestro objetivo ha sido que estos animales consigan hogar, y trabajamos todos los días para mejorar y crecer.</p>
+            <p>Para ver mas <a href="nosotros.html">haz click aquí</a></p>
+        </section>
+        <section class="section">
+            <h2>Mascotas para adoptar</h2>
+            <div class="card-container" id="cardContainer"></div>
+        </section>
+        <section class="section">
+           <h2>Contactos</h2>
+            <p>
+                Si deseas saber más sobre nosotros o tienes alguna pregunta, no dudes en <a href="contacto.html">contactarnos</a>.
+            </p>
+        </section>
+
+    </main>
+</body>
+    <script src="JS/script.js"></script>
+</html>
